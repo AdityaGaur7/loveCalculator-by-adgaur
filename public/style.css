@@ -543,7 +543,7 @@ textarea {
     font-size: 2vh;
     position: relative;
     top: -16vh;
-    font-family: cursive;
+   
     text-transform: capitalize;
     color: rgb(249, 9, 9);
     text-shadow: 5px 3px 5px rgb(234, 49, 234);
