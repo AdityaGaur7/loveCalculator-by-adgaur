@@ -28,7 +28,7 @@ app.get("/",function (req,res) {
 })
 app.post("/",async function(req,res){
     let newData = new data({Name : req.body.nm ,Crush : req.body.crsh});
-    newData.save();
+   await newData.save();
     console.log(newData);
     res.redirect('/next')
 })
