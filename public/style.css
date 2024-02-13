@@ -172,6 +172,7 @@ form input {
 
 .form {
     display: flex;
+    text-align: center;
     justify-content: center;
 }
 
@@ -312,18 +313,20 @@ textarea {
 
     animation: movel;
 
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
     
 }
 
 .daya {
     animation: mover;
-    animation-duration: 4s;
+    animation-duration: 3s;
     
     animation-delay: 0s;
     animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
 .container {
@@ -417,6 +420,7 @@ textarea {
 }
 #text-h1{
     color: #1100fa;
+    text-transform: uppercase;
     text-shadow: 5px 3px 4px rgb(252, 252, 252);
 }
 .new {
