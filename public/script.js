@@ -1,8 +1,7 @@
 
 let sad = ['gif/s1.gif', 'gif/s2.gif', 'gif/s3.gif', 'gif/s4.gif', 'gif/s5.gif', 'gif/s6.gif'];
 
-let cute = ['gif/l1.gif', 'gif/l4.gif', 'gif/l7.gif', 'gif/l8.gif'
-    , 'gif/l9.gif', 'gif/l14.gif', 'gif/l15.gif', 'gif/l16.gif', 'gif/l12.gif', 'gif/l13.gif', 'gif/l17.gif', 'gif/l10.gif', 'gif/l11.gif'];
+let cute = ['gif/l4.gif', 'gif/l7.gif', 'gif/l8.gif' , 'gif/l9.gif', 'gif/l14.gif', 'gif/l15.gif', 'gif/l16.gif', 'gif/l12.gif', 'gif/l13.gif', 'gif/l17.gif', 'gif/l10.gif', 'gif/l11.gif'];
 
 let cutie = ['gif/l2.gif', 'gif/l3.gif', 'gif/l5.gif', 'gif/l6.gif','gif/l18.gif'];
 
@@ -41,6 +40,7 @@ let f = () => {
     let random;
     random = Math.floor(Math.random() * 100);
   
+    if(random<40)random +=30;
     if (random < 50) {
 
         let random1 = Math.floor(Math.random() * sad.length);
@@ -55,6 +55,10 @@ let f = () => {
         let random3 = Math.floor(Math.random() * cutie.length);
         document.getElementById("gif").src = cutie[random3];
         document.getElementById("text-h1").innerHTML = "Two hearts meant to be together will always find their way. 😘";
+    }
+    if(random>100){
+         var x = random - 100 ;
+          random = 100 -x;
     }
     document.getElementById("lv").innerHTML = random + "%";
     document.getElementById("percent").style.display = "block";
