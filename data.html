@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Crush</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Data will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script>
+        fetch('/alldata')
+            .then(response => response.json())
+            .then(data => {
+                const dataTable = document.getElementById('data-table');
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.Name}</td>
+                        <td>${item.Crush}</td>
+                    `;
+                    dataTable.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
