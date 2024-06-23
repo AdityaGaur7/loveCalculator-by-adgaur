@@ -7,9 +7,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 
 app.use(express.static('public'));  
 
-app.get("/next",function(req,res){
-    res.sendFile(__dirname+ "/next.html")
-})
+
 const crushdb = "mongodb+srv://adkumar7112:adgaur7112@cluster0.iw4txgj.mongodb.net/crushdata";
 const db = "mongodb://127.0.0.1:27017/crush";
 
@@ -27,6 +25,10 @@ const data = mongoose.model("data",crushSchema);
 
 app.get("/",function (req,res) {
     res.sendFile(__dirname + "/index.html") ;
+})
+
+app.get("/next",function(req,res){
+    res.sendFile(__dirname+ "/next.html")
 })
 app.post("/",async function(req,res){
     let newData = new data({Name : req.body.nm ,Crush : req.body.crsh});
